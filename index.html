@@ -7,13 +7,13 @@
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="apple-touch-icon" href="assets/favicon.png" />
   <title>Wabasso Ranch - Coming soon</title>
-  <meta name="description" content="Florida's next USDA-inspected meat processing facility and retail butchery. Raised here. Processed here. Sold here. Join the list for updates." />
+  <meta name="description" content="Florida Beef. For Floridians. Join the list for updates." />
 
   <!-- OG / share -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://wabassoranch.info/" />
   <meta property="og:title" content="Wabasso Ranch - Coming soon" />
-  <meta property="og:description" content="Florida's next USDA-inspected meat processing facility and retail butchery. Raised here. Processed here. Sold here." />
+  <meta property="og:description" content="Florida Beef. For Floridians." />
   <meta property="og:image" content="https://wabassoranch.info/assets/ranch-cattle-faces.jpg" />
   <meta property="og:image:secure_url" content="https://wabassoranch.info/assets/ranch-cattle-faces.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -23,11 +23,11 @@
   <meta property="og:site_name" content="Wabasso Ranch" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Wabasso Ranch - Coming soon" />
-  <meta name="twitter:description" content="Florida's next USDA-inspected meat processing facility and retail butchery." />
+  <meta name="twitter:description" content="Florida Beef. For Floridians." />
   <meta name="twitter:image" content="https://wabassoranch.info/assets/ranch-cattle-faces.jpg" />
 
   <style>
-    /* ---------- Fonts (from Butcher app) ---------- */
+    /* ---------- Fonts ---------- */
     @font-face {
       font-family: 'Chirp';
       src: url('assets/fonts/Chirp Regular.woff') format('woff');
@@ -35,18 +35,8 @@
     }
     @font-face {
       font-family: 'Chirp';
-      src: url('assets/fonts/Chirp Medium.woff') format('woff');
-      font-weight: 500; font-style: normal; font-display: swap;
-    }
-    @font-face {
-      font-family: 'Chirp';
       src: url('assets/fonts/Chirp Bold.woff') format('woff');
       font-weight: 700; font-style: normal; font-display: swap;
-    }
-    @font-face {
-      font-family: 'Chirp';
-      src: url('assets/fonts/Chirp Heavy.woff') format('woff');
-      font-weight: 800; font-style: normal; font-display: swap;
     }
     @font-face {
       font-family: 'Burnest';
@@ -54,25 +44,19 @@
       font-weight: 400; font-style: normal; font-display: swap;
     }
 
-    /* ---------- Brand palette ---------- */
     :root {
       --bg:            #000000;
-      --surface:       #16181c;
-      --surface-hover: #1d1f23;
       --primary:       #1d9bf0;
       --primary-hover: #1a8cd8;
       --text:          #e7e9ea;
-      --text-muted:    #71767b;
-      --border:        #2f3336;
       --success:       #00ba7c;
-      --danger:        #f4212e;
-
       --font-sans:    'Chirp', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-display: 'Burnest', 'Chirp', serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-    html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    html, body { height: 100%; }
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
     body {
       background: var(--bg);
       color: var(--text);
@@ -81,53 +65,14 @@
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
+      overflow: hidden;
     }
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
-    /* ---------- Layout helpers ---------- */
-    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 96px 0; }
-    @media (max-width: 640px) {
-      section { padding: 72px 0; }
-      .wrap { padding: 0 20px; }
-    }
-
-    /* ---------- Nav ---------- */
-    nav.top {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(0,0,0,0.72);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-    nav.top .wrap {
-      display: flex; align-items: center; justify-content: space-between;
-      padding-top: 18px; padding-bottom: 18px;
-      min-height: 72px;
-    }
-    nav.top .logo { display: flex; align-items: center; }
-    nav.top .logo img {
-      height: 44px; width: auto;
-      object-fit: contain;
-      display: block;
-    }
-    nav.top .nav-cta {
-      padding: 10px 20px; border-radius: 999px;
-      background: var(--text); color: var(--bg);
-      font-weight: 700; font-size: 14px;
-      transition: opacity 0.15s ease;
-    }
-    nav.top .nav-cta:hover { opacity: 0.9; }
-    @media (max-width: 560px) {
-      nav.top .logo img { height: 34px; }
-      nav.top .nav-cta { padding: 8px 14px; font-size: 13px; }
-    }
-
-    /* ---------- HERO (full-bleed photo) ---------- */
     .hero {
       position: relative;
-      min-height: 88vh;
+      min-height: 100vh;
       display: flex; align-items: center;
       overflow: hidden;
       padding: 120px 0 80px;
@@ -136,7 +81,6 @@
       position: absolute; inset: 0; z-index: 0;
       background-image: url('assets/ranch-cattle-faces.jpg');
       background-size: cover; background-position: center 30%;
-      will-change: transform;
     }
     .hero .bg::after {
       content: ''; position: absolute; inset: 0;
@@ -144,7 +88,23 @@
         linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.85) 90%, #000 100%),
         linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
     }
-    .hero .wrap { position: relative; z-index: 1; width: 100%; }
+    .wrap {
+      position: relative; z-index: 1; width: 100%;
+      max-width: 1140px; margin: 0 auto; padding: 0 24px;
+    }
+    @media (max-width: 640px) {
+      .wrap { padding: 0 20px; }
+    }
+
+    .logo-top {
+      position: absolute; top: 24px; left: 24px; z-index: 2;
+      display: flex; align-items: center;
+    }
+    .logo-top img { height: 44px; opacity: 0.95; }
+    @media (max-width: 640px) {
+      .logo-top { top: 18px; left: 18px; }
+      .logo-top img { height: 36px; }
+    }
 
     .badge {
       display: inline-flex; align-items: center; gap: 10px;
@@ -180,7 +140,7 @@
     }
     h1 .accent { color: var(--primary); }
 
-    .hero .lede {
+    .lede {
       font-size: clamp(17px, 2vw, 22px);
       color: var(--text);
       max-width: 620px;
@@ -188,9 +148,8 @@
       line-height: 1.5;
       text-shadow: 0 2px 20px rgba(0,0,0,0.6);
     }
-    .hero .lede strong { font-weight: 700; }
+    .lede strong { font-weight: 700; }
 
-    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 16px 28px; border-radius: 999px;
@@ -200,410 +159,18 @@
     }
     .btn-primary { background: var(--primary); color: #fff; }
     .btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
-    .btn-ghost {
-      background: rgba(255,255,255,0.08); color: var(--text);
-      border: 1px solid rgba(255,255,255,0.2);
-      backdrop-filter: blur(10px);
-    }
-    .btn-ghost:hover { background: rgba(255,255,255,0.14); }
     .btn svg { width: 18px; height: 18px; }
-
-    .hero .scroll-hint {
-      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-      color: var(--text-muted); font-size: 12px;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      font-weight: 600;
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      z-index: 1;
-    }
-    .hero .scroll-hint .chev {
-      width: 18px; height: 18px; animation: bob 2s ease-in-out infinite;
-    }
-    @keyframes bob {
-      0%,100% { transform: translateY(0); opacity: 0.5; }
-      50%     { transform: translateY(4px); opacity: 1; }
-    }
-
-    /* ---------- Stats strip ---------- */
-    .stats {
-      padding: 40px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .stats .grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
-      text-align: center;
-    }
-    .stats .num {
-      font-family: var(--font-display);
-      font-size: clamp(30px, 4.5vw, 44px);
-      color: var(--primary);
-      line-height: 1; margin-bottom: 8px;
-    }
-    .stats .label {
-      font-size: 12px; color: var(--text-muted);
-      font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    @media (max-width: 640px) {
-      .stats .grid { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; }
-    }
-
-    /* ---------- Section header ---------- */
-    .section-head {
-      text-align: center; margin-bottom: 56px;
-    }
-    .section-head .eyebrow {
-      display: inline-block;
-      font-size: 12px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--primary);
-      margin-bottom: 14px;
-    }
-    .section-head h2 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: clamp(32px, 5vw, 54px);
-      line-height: 1.05;
-      letter-spacing: -0.012em;
-      margin-bottom: 16px;
-    }
-    .section-head p {
-      max-width: 580px; margin: 0 auto;
-      color: var(--text-muted);
-      font-size: 17px; line-height: 1.6;
-    }
-
-    /* ---------- Light sections (text-heavy only; image-bg sections stay dark) ---------- */
-    #story,
-    #updates,
-    #faqs {
-      background: #ffffff;
-      color: #0a0a0a;
-    }
-    #story .section-head h2,
-    #updates .section-head h2,
-    #faqs .section-head h2,
-    #story .prose p,
-    #story .prose p strong,
-    #updates .tli .title,
-    #faqs details.faq summary { color: #0a0a0a; }
-
-    #updates .tli .body,
-    #faqs details.faq .answer { color: #57606a; }
-
-    #updates .timeline::before { background: #e5e5e5; }
-    #updates .tli:not(.done):not(.active)::before { background: #f3f4f6; border-color: #d4d7db; }
-    #updates .tli:not(.done):not(.active) .date { color: #57606a; }
-    #faqs details.faq { border-bottom-color: #e5e5e5; }
-
-    /* ---------- Full-bleed photo divider (soft fade from white on top only) ---------- */
-    .photo-divider {
-      padding: 0;
-      width: 100%;
-      overflow: hidden;
-      background: #ffffff;
-    }
-    .photo-divider img {
-      width: 100%;
-      height: clamp(340px, 52vh, 560px);
-      object-fit: cover;
-      object-position: center 55%;
-      display: block;
-      -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.7) 40%, #000 60%);
-              mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.7) 40%, #000 60%);
-    }
-
-    /* ---------- Build section (banner header + gallery) ---------- */
-    .band-head {
-      min-height: 44vh;
-      padding: 100px 0 72px;
-      text-align: center;
-    }
-    .band-head .section-head { margin-bottom: 0; }
-    .band-head .section-head h2 { color: #ffffff; text-shadow: 0 2px 30px rgba(0,0,0,0.6); }
-    .band-head .section-head p {
-      color: #ffffff;
-      font-weight: 500;
-      max-width: 740px;
-      line-height: 1.65;
-      text-shadow: 0 2px 16px rgba(0,0,0,0.85), 0 0 2px rgba(0,0,0,0.6);
-    }
-    .build-gallery { padding: 28px 0 96px; }
-
-    /* ---------- Story prose ---------- */
-    .prose { max-width: 720px; margin: 0 auto; }
-    .prose p {
-      font-size: clamp(17px, 1.9vw, 20px);
-      color: var(--text);
-      line-height: 1.65;
-      margin-bottom: 20px;
-    }
-    .prose p.muted { color: var(--text-muted); }
-
-    /* ---------- Story lead image ---------- */
-    .story-lead {
-      width: 100%;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .story-lead img {
-      width: 100%;
-      height: clamp(200px, 32vh, 340px);
-      object-fit: cover;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      display: block;
-    }
-    @media (max-width: 720px) {
-      .story-lead { padding: 0 16px; }
-      .story-lead img { border-radius: 12px; height: 200px; }
-    }
-
-    /* ---------- Ranch gallery (photos) ---------- */
-    .ranch-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-      margin-top: 56px;
-    }
-    .ranch-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-    }
-    .ranch-card img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.8s ease;
-    }
-    .ranch-card:hover img { transform: scale(1.04); }
-    .ranch-card .cap {
-      position: absolute; left: 14px; bottom: 14px;
-      padding: 7px 13px; border-radius: 999px;
-      background: rgba(0,0,0,0.72); backdrop-filter: blur(10px);
-      font-size: 12px; font-weight: 600; color: var(--text);
-      letter-spacing: 0.02em;
-    }
-    .r-wide { grid-column: span 12; aspect-ratio: 21 / 9; }
-    .r-half { grid-column: span 6; aspect-ratio: 4 / 3; }
-    .r-third { grid-column: span 4; aspect-ratio: 4 / 3; }
-    @media (max-width: 720px) {
-      .r-wide  { grid-column: 1 / -1; aspect-ratio: 16 / 11; }
-      .r-half  { grid-column: 1 / -1; aspect-ratio: 16 / 11; }
-      .r-third { grid-column: 1 / -1; aspect-ratio: 16 / 11; }
-    }
-
-    /* ---------- Full-bleed photo band ---------- */
-    .band {
-      position: relative;
-      min-height: 70vh;
-      display: flex; align-items: center;
-      overflow: hidden;
-      padding: 120px 0;
-    }
-    .band .bg {
-      position: absolute; inset: 0; z-index: 0;
-      background-size: cover; background-position: center 55%;
-    }
-    .band.band-feed .bg { background-image: url('assets/ranch-feed-trough.jpg'); }
-    .band .bg::after {
-      content: ''; position: absolute; inset: 0;
-      background:
-        linear-gradient(180deg, #000 0%, rgba(0,0,0,0.45) 20%, rgba(0,0,0,0.45) 80%, #000 100%),
-        linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
-    }
-    .band .wrap { position: relative; z-index: 1; }
-    .band .pullquote {
-      font-family: var(--font-display);
-      font-size: clamp(28px, 4.2vw, 52px);
-      line-height: 1.12;
-      letter-spacing: -0.01em;
-      max-width: 780px;
-      margin-bottom: 16px;
-    }
-    .band .attribution {
-      font-size: 14px; color: var(--text-muted);
-      font-weight: 500; letter-spacing: 0.03em;
-    }
-
-    /* ---------- Renders (the build) ---------- */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-    }
-    .gcard {
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      aspect-ratio: 16 / 10;
-    }
-    .gcard img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-    .gcard:hover img { transform: scale(1.04); }
-    .gcard .cap {
-      position: absolute; left: 14px; bottom: 14px;
-      padding: 7px 13px; border-radius: 999px;
-      background: rgba(0,0,0,0.72); backdrop-filter: blur(10px);
-      font-size: 12px; font-weight: 600; color: var(--text);
-      letter-spacing: 0.02em;
-    }
-    .g-1 { grid-column: span 7; }
-    .g-2 { grid-column: span 5; }
-    .g-3 { grid-column: span 6; }
-    .g-4 { grid-column: span 6; }
-    .g-wide { grid-column: 1 / -1; aspect-ratio: 21 / 9; }
-    @media (max-width: 720px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-      .g-1, .g-2, .g-3, .g-4, .g-wide { grid-column: 1; aspect-ratio: 4 / 3; }
-    }
-
-    /* ---------- FAQ ---------- */
-    .faqs { max-width: 760px; margin: 0 auto; }
-    details.faq {
-      border-bottom: 1px solid var(--border);
-      padding: 22px 0;
-    }
-    details.faq[open] summary .chev { transform: rotate(45deg); }
-    details.faq summary {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; cursor: pointer; list-style: none;
-      font-size: 18px; font-weight: 700; color: var(--text);
-    }
-    details.faq summary::-webkit-details-marker { display: none; }
-    details.faq summary .chev {
-      width: 22px; height: 22px; flex-shrink: 0;
-      transition: transform 0.2s ease;
-      color: var(--primary);
-    }
-    details.faq .answer {
-      padding-top: 14px;
-      color: var(--text-muted);
-      font-size: 16px; line-height: 1.65;
-    }
-
-    /* ---------- Timeline ---------- */
-    .timeline {
-      max-width: 760px; margin: 0 auto;
-      position: relative;
-    }
-    .timeline::before {
-      content: ''; position: absolute;
-      left: 9px; top: 8px; bottom: 8px;
-      width: 2px; background: var(--border);
-    }
-    .tli {
-      position: relative; padding-left: 42px;
-      padding-bottom: 30px;
-    }
-    .tli::before {
-      content: ''; position: absolute; left: 0; top: 6px;
-      width: 20px; height: 20px; border-radius: 50%;
-      background: var(--surface); border: 2px solid var(--border);
-    }
-    .tli.done::before {
-      background: var(--success); border-color: var(--success);
-      box-shadow: 0 0 0 4px rgba(0, 186, 124, 0.2);
-    }
-    .tli.active::before {
-      background: var(--primary); border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.25);
-      animation: pulse-blue 2s ease-in-out infinite;
-    }
-    @keyframes pulse-blue {
-      0%,100% { box-shadow: 0 0 0 4px rgba(29,155,240,0.25); }
-      50%     { box-shadow: 0 0 0 8px rgba(29,155,240,0.06); }
-    }
-    .tli .date {
-      font-size: 12px; font-weight: 700;
-      color: var(--text-muted); letter-spacing: 0.04em;
-      text-transform: uppercase; margin-bottom: 4px;
-    }
-    .tli.done .date { color: var(--success); }
-    .tli.active .date { color: var(--primary); }
-    .tli .title {
-      font-size: 18px; font-weight: 700; margin-bottom: 6px;
-    }
-    .tli .body {
-      color: var(--text-muted); font-size: 15px; line-height: 1.6;
-    }
-
-    /* ---------- CTA block ---------- */
-    .cta-block {
-      margin-top: 24px;
-      padding: 64px 40px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, rgba(29,155,240,0.16), rgba(29,155,240,0.04));
-      border: 1px solid rgba(29,155,240,0.35);
-      text-align: center;
-    }
-    .cta-block h3 {
-      font-family: var(--font-display); font-weight: 400;
-      font-size: clamp(28px, 4.2vw, 44px);
-      line-height: 1.08; margin-bottom: 16px;
-      letter-spacing: -0.01em;
-    }
-    .cta-block p {
-      color: var(--text-muted); max-width: 540px; margin: 0 auto 32px;
-      font-size: 17px; line-height: 1.6;
-    }
-    .cta-block .btn-primary { padding: 18px 36px; font-size: 17px; }
-    @media (max-width: 640px) { .cta-block { padding: 48px 24px; } }
-
-    /* ---------- CTA bare (no container box) ---------- */
-    .cta-bare {
-      margin-top: 24px;
-      text-align: center;
-    }
-    .cta-bare h3 {
-      font-family: var(--font-display); font-weight: 400;
-      font-size: clamp(28px, 4.2vw, 44px);
-      line-height: 1.08; margin-bottom: 16px;
-      letter-spacing: -0.01em;
-    }
-    .cta-bare p {
-      color: var(--text-muted); max-width: 540px; margin: 0 auto 32px;
-      font-size: 17px; line-height: 1.6;
-    }
-    .cta-bare .btn-primary { padding: 18px 36px; font-size: 17px; }
-
-    /* ---------- Footer ---------- */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 0 56px;
-      color: var(--text-muted);
-      font-size: 14px;
-    }
-    footer .wrap {
-      display: flex; flex-wrap: wrap; gap: 16px;
-      align-items: center; justify-content: space-between;
-    }
-    footer .logo img { height: 24px; opacity: 0.85; }
-    footer a:hover { color: var(--text); }
-    footer .meta { display: flex; gap: 20px; flex-wrap: wrap; }
   </style>
 </head>
 <body>
 
-  <!-- ============ NAV ============ -->
-  <nav class="top">
-    <div class="wrap">
-      <a href="#top" class="logo" aria-label="Wabasso Ranch">
-        <img src="assets/wabassologo-tight.png" alt="Wabasso Ranch" />
-      </a>
-      <a href="https://wabassoranch.beehiiv.com/" class="nav-cta" target="_blank" rel="noopener">Join the List</a>
-    </div>
-  </nav>
-
-  <!-- ============ HERO (cattle photo) ============ -->
-  <header class="hero" id="top">
+  <header class="hero">
     <div class="bg"></div>
+
+    <a href="#" class="logo-top" aria-label="Wabasso Ranch">
+      <img src="assets/wabassologo-tight.png" alt="Wabasso Ranch" />
+    </a>
+
     <div class="wrap">
       <div class="badge">
         <span class="dot"></span>
@@ -616,243 +183,15 @@
       </h1>
 
       <p class="lede">
-        Wabasso Ranch is building a USDA-inspected meat processing facility and retail butchery in the heart of Florida cattle country. No more questioning where your meat comes from. <strong>True Florida beef &mdash; Raised here. Processed here. Sold here.</strong>
+        Wabasso is building a butcher shop and processing facility right on our ranch in Avon Park. We&rsquo;re ready to serve you Florida beef, under a Florida brand. <strong>Leave your email below and we&rsquo;ll keep you posted on the process.</strong>
       </p>
 
-      <div class="cta-row">
-        <a href="https://wabassoranch.beehiiv.com/" class="btn btn-primary" target="_blank" rel="noopener">
-          Get updates
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#story" class="btn btn-ghost">Read the story</a>
-      </div>
-    </div>
-
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      <a href="https://wabassoranch.beehiiv.com/" class="btn btn-primary" target="_blank" rel="noopener">
+        Get updates
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </header>
-
-  <!-- ============ STORY ============ -->
-  <section id="story">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Why we&rsquo;re building this</div>
-        <h2>You want to know<br />where your food comes from.</h2>
-      </div>
-
-      <div class="prose">
-        <p>
-          Florida is one of the top cattle-producing states in the country, yet almost
-          none of the beef on local grocery shelves was processed here. It was shipped
-          in from Texas, from Nebraska, or from a country on another continent &mdash;
-          with labels that tell you almost nothing about the animal or the ranch
-          behind it.
-        </p>
-
-        <p><strong>We&rsquo;re fixing that.</strong></p>
-
-        <p>
-          Our facility will feature a retail butchery and caf&eacute; where every cut
-          has a story we can actually tell you. The ranch. The rancher. The animal
-          &mdash; and how it was raised. Our Florida beef will always be on the counter,
-          alongside cuts from trusted partners who share how we do things: people we
-          know by name, raising cattle the way we&rsquo;d raise our own.
-        </p>
-
-        <p>
-          We&rsquo;re building a supply chain that is short enough to see end to end,
-          and honest enough to tell you exactly where every pound came from.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============ BUILD (feed-trough banner + renders) ============ -->
-  <section class="band band-feed band-head" id="renders">
-    <div class="bg"></div>
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">The build</div>
-        <h2>More than a meat plant.<br />A face to our farm.</h2>
-        <p>We want this to be a place the community gathers &mdash; not just somewhere to pick up groceries. A place where parents come with their kids, where neighbors grab coffee before a long day, where shoppers actually know the person cutting their steak. The store will feature a full retail butcher shop with glass meat cases, a quick-service food counter, and friendly rocking chairs on the porch. The USDA-inspected processing facility sits quietly behind it, out of sight. This isn&rsquo;t a big, scary industrial operation &mdash; it&rsquo;s the front door to our ranch and the marketplace for our community.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="build-gallery">
-    <div class="wrap">
-      <div class="gallery-grid">
-        <div class="gcard g-wide">
-          <img src="assets/facility-exterior.jpg" alt="Front elevation of the Wabasso Ranch facility with porch and rocking chairs" loading="lazy" />
-          <div class="cap">The storefront</div>
-        </div>
-        <div class="gcard g-wide">
-          <img src="assets/facility-interior.png" alt="Interior of the Wabasso retail butcher shop, meat case, and caf&eacute;" loading="lazy" />
-          <div class="cap">Inside · butcher shop &amp; caf&eacute;</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TIMELINE ============ -->
-  <section id="updates">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Timeline</div>
-        <h2>Steps to Opening</h2>
-        <p>Here&rsquo;s where we&rsquo;re at and how it&rsquo;s going.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="tli done">
-          <div class="date">Mar 10, 2026</div>
-          <div class="title">Planning &amp; Zoning &mdash; Approved 7-0</div>
-          <div class="body">Unanimous approval from the P&amp;Z Board, with 32 letters of support from the community.</div>
-        </div>
-
-        <div class="tli active">
-          <div class="date">Apr 21, 2026 · Just in</div>
-          <div class="title">County Commissioners &mdash; Approved 7-0</div>
-          <div class="body">Final zoning hurdle cleared. The facility is approved from a zoning standpoint.</div>
-        </div>
-
-        <div class="tli">
-          <div class="date">2026</div>
-          <div class="title">Permits &amp; site plan review</div>
-          <div class="body">The unglamorous middle stretch &mdash; engineering, state environmental, and USDA paperwork.</div>
-        </div>
-
-        <div class="tli">
-          <div class="date">Q1 2027 &middot; Target</div>
-          <div class="title">Construction complete</div>
-          <div class="body">Steel goes up. Coolers go in. The retail counter gets built out.</div>
-        </div>
-
-        <div class="tli">
-          <div class="date">Q2 – Q3 2027 &middot; Target</div>
-          <div class="title">Doors open</div>
-          <div class="body">Wabasso Beef in the display cases. Coffee on the counter. Burgers in the kitchen. Come see us.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ DIVIDER (sunset herd) ============ -->
-  <section class="photo-divider" aria-hidden="true">
-    <img src="assets/ranch-sunset.jpg" alt="" />
-  </section>
-
-  <!-- ============ FAQs ============ -->
-  <section id="faqs">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Frequently asked</div>
-        <h2>Questions we keep getting.</h2>
-      </div>
-
-      <div class="faqs">
-        <details class="faq" open>
-          <summary>Where exactly will it be?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <div class="answer"><p>The facility will sit on our farm in Avon Park, FL &mdash; a 10-acre parcel where CR 64 E meets E Avon Pines Road, right behind the volunteer fire station. The storefront will be accessible from both roads.</p></div>
-        </details>
-
-        <details class="faq">
-          <summary>When will it open?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <div class="answer"><p>Zoning and county commissioner approvals are in hand. Ahead of us: commercial site plan review (at least another six months), construction, and USDA pre-operational review. Join the list and you&rsquo;ll be the first to know when we nail down a grand opening date.</p></div>
-        </details>
-
-        <details class="faq">
-          <summary>Will it be open to the public?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <div class="answer"><p>Yes. The front of the facility is a retail butcher shop and agritourism center &mdash; meat cases, a small quick-service restaurant with limited seating, and a family-friendly open lawn farmers market area. The back of the facility, where processing and slaughter happen, is closed to the public for food-safety and USDA reasons.</p></div>
-        </details>
-
-        <details class="faq">
-          <summary>Can local ranchers bring their animals here?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <div class="answer"><p>Yes &mdash; USDA-inspected and custom-exempt processing for other ranches, hobby farms, and county fair customers is a core part of the business. Serving other ranchers and livestock raisers in the area is part of why we&rsquo;re building this in the first place.</p></div>
-        </details>
-
-        <details class="faq">
-          <summary>Will you sell online / ship meat?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <div class="answer"><p>That&rsquo;s the plan. Direct-to-consumer online, farmers markets, Florida restaurants, and wholesale to grocery and hospitality.</p></div>
-        </details>
-
-        <details class="faq">
-          <summary>Grass-fed or grain-fed?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <div class="answer"><p>Both. We understand and appreciate what each one offers, and we want our customers to be able to choose what suits their taste, their cooking, and their budget. Grass-fed runs leaner with a more pronounced flavor from the pasture. Grain-fed finishes with more marbling and the rich, buttery profile most Americans grew up on. Neither is better &mdash; they&rsquo;re different, and we&rsquo;ll carry both so you can pick the one that&rsquo;s right for the meal you&rsquo;re making.</p></div>
-        </details>
-
-        <details class="faq">
-          <summary>Will you have more than just beef?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <div class="answer"><p>Yes. The butcher shop will carry a full lineup of meats &mdash; beef, pork, poultry, and more &mdash; so it can be a one-stop shop for your protein needs. Alongside the meat case, you&rsquo;ll find locally produced dairy, seasonal produce, and other ag products from farms we trust.</p></div>
-        </details>
-
-        <details class="faq">
-          <summary>Will there be jobs?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <div class="answer"><p>Yes &mdash; the facility will create new jobs across meat processing, sanitation, retail, kitchen, sales and distribution, and administration. Hiring will ramp up as we get closer to opening, and more roles will open up as we scale.</p></div>
-        </details>
-
-        <details class="faq">
-          <summary>What about odor, noise, and traffic?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <div class="answer"><p>Fair questions &mdash; and ones the zoning approval took seriously. The approval came with 19 specific conditions addressing all three. Among them: refrigerated byproduct storage with sealed containers emptied biweekly, an enclosed inedible room with negative-pressure ventilation, an on-site USDA inspector, a traffic management plan, acoustically shielded outdoor equipment, and full-cutoff downward lighting with no stadium-style fixtures. Everything stays fully enclosed and climate-controlled, with a clear separation between the public spaces out front and the commercial operations behind them.</p></div>
-        </details>
-
-        <details class="faq">
-          <summary>How can I support this?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <div class="answer"><p>Join the list. Tell your friends. Share the post. When we open, come buy beef. The support from Highlands County so far has been the reason it&rsquo;s happening.</p></div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FINAL CTA ============ -->
-  <section id="signup" style="padding-top: 0;">
-    <div class="wrap">
-      <div class="cta-bare">
-        <h3>Be the first to know.</h3>
-        <p>Construction updates, opening-day alerts, processing slot openings, and the occasional photo from the farm. No spam &mdash; just real updates every few months until we open.</p>
-        <a href="https://wabassoranch.beehiiv.com/" class="btn btn-primary" target="_blank" rel="noopener">
-          Join the Newsletter
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer>
-    <div class="wrap">
-      <a href="#top" class="logo" aria-label="Wabasso Ranch">
-        <img src="assets/wabassologo-tight.png" alt="Wabasso Ranch" />
-      </a>
-      <div class="meta">
-        <span>Avon Park, FL</span>
-        <span>&copy; 2026 Wabasso Ranch</span>
-      </div>
-    </div>
-  </footer>
 
 </body>
 </html>
