@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <title>Wabasso Ranch - Coming soon</title>
+  <meta name="description" content="Florida Beef. For Floridians. Join the list for updates." />
+
+  <!-- OG / share -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wabassoranch.info/" />
+  <meta property="og:title" content="Wabasso Ranch - Coming soon" />
+  <meta property="og:description" content="Florida Beef. For Floridians." />
+  <meta property="og:image" content="https://wabassoranch.info/assets/ranch-cattle-faces.jpg" />
+  <meta property="og:image:secure_url" content="https://wabassoranch.info/assets/ranch-cattle-faces.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1800" />
+  <meta property="og:image:height" content="988" />
+  <meta property="og:image:alt" content="Wabasso Ranch cattle in Central Florida" />
+  <meta property="og:site_name" content="Wabasso Ranch" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Wabasso Ranch - Coming soon" />
+  <meta name="twitter:description" content="Florida Beef. For Floridians." />
+  <meta name="twitter:image" content="https://wabassoranch.info/assets/ranch-cattle-faces.jpg" />
+
+  <style>
+    /* ---------- Fonts ---------- */
+    @font-face {
+      font-family: 'Chirp';
+      src: url('assets/fonts/Chirp Regular.woff') format('woff');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Chirp';
+      src: url('assets/fonts/Chirp Bold.woff') format('woff');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Burnest';
+      src: url('assets/fonts/Burnest Regular.otf') format('opentype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+
+    :root {
+      --bg:            #000000;
+      --primary:       #1d9bf0;
+      --primary-hover: #1a8cd8;
+      --text:          #e7e9ea;
+      --success:       #00ba7c;
+      --font-sans:    'Chirp', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Burnest', 'Chirp', serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    html, body { height: 100%; }
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; align-items: center;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+    .hero .bg {
+      position: absolute; inset: 0; z-index: 0;
+      background-image: url('assets/ranch-cattle-faces.jpg');
+      background-size: cover; background-position: center 30%;
+    }
+    .hero .bg::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.85) 90%, #000 100%),
+        linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
+    }
+    .wrap {
+      position: relative; z-index: 1; width: 100%;
+      max-width: 1140px; margin: 0 auto; padding: 0 24px;
+    }
+    @media (max-width: 640px) {
+      .wrap { padding: 0 20px; }
+    }
+
+    .logo-top {
+      position: absolute; top: 24px; left: 24px; z-index: 2;
+      display: flex; align-items: center;
+    }
+    .logo-top img { height: 44px; opacity: 0.95; }
+    @media (max-width: 640px) {
+      .logo-top { top: 18px; left: 18px; }
+      .logo-top img { height: 36px; }
+    }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 8px 16px; border-radius: 999px;
+      background: rgba(0, 186, 124, 0.18);
+      border: 1px solid rgba(0, 186, 124, 0.45);
+      color: var(--success);
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 0.02em; text-transform: uppercase;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+    .badge .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 4px rgba(0, 186, 124, 0.3);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 4px rgba(0,186,124,0.3); }
+      50%     { box-shadow: 0 0 0 8px rgba(0,186,124,0.05); }
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(40px, 7.5vw, 88px);
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+      margin-bottom: 28px;
+      text-shadow: 0 2px 40px rgba(0,0,0,0.5);
+      max-width: 900px;
+    }
+    h1 .accent { color: var(--primary); }
+
+    .lede {
+      font-size: clamp(17px, 2vw, 22px);
+      color: var(--text);
+      max-width: 620px;
+      margin-bottom: 40px;
+      line-height: 1.5;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+    }
+    .lede strong { font-weight: 700; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 28px; border-radius: 999px;
+      font-weight: 700; font-size: 16px; border: 0;
+      cursor: pointer; transition: all 0.15s ease;
+      font-family: var(--font-sans);
+    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .btn svg { width: 18px; height: 18px; }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="bg"></div>
+
+    <a href="#" class="logo-top" aria-label="Wabasso Ranch">
+      <img src="assets/wabassologo-tight.png" alt="Wabasso Ranch" />
+    </a>
+
+    <div class="wrap">
+      <div class="badge">
+        <span class="dot"></span>
+        Avon Park, Florida
+      </div>
+
+      <h1>
+        <span class="accent">Florida Beef.</span><br />
+        For Floridians.
+      </h1>
+
+      <p class="lede">
+        Wabasso is building a butcher shop and processing facility right on our ranch in Avon Park. We&rsquo;re ready to serve you Florida beef, under a Florida brand. <strong>Leave your email below and we&rsquo;ll keep you posted on the process.</strong>
+      </p>
+
+      <a href="https://wabassoranch.beehiiv.com/" class="btn btn-primary" target="_blank" rel="noopener">
+        Get updates
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+</body>
+</html>
